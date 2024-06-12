@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +11,26 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="_bg__register_ek2_color">#C8C8C8</color>
+    <color name="ellipse_82_color">#0E325E</color>
+    <color name="ellipse_84_color">#C53F3E</color>
+    <color name="_bg__frame_12_ek1_color">#000000</color>
+    <color name="register_ek3_color">#FFFFFF</color>
+    <color name="rectangle_12_color">#4C4C63</color>
+    <color name="username_color">#FAFAFA</color>
+    <color name="elevate_your_game_and_experience_color">#333333</color>
+    <color name="_bg__login_ek2_color">#C8C8C8</color>
+    <color name="ellipse_85_color">#C53F3E</color>
+    <color name="_bg__frame_10_ek1_color">#000000</color>
+    <color name="login_ek3_color">#FFFFFF</color>
+    <color name="_bg__home_ek2_color">#C8C8C8</color>
+    <color name="rectangle_1708_color">#ffffff</color>
+    <color name="name_color">#B6B6B6</color>
+    <color name="varis_anggito_color">#DDDDDD</color>
+    <color name="rectangle_1700_color">#303030</color>
+    <color name="search_event_color">#979797</color>
+    <color name="badminton_color">#FFFFFF</color>
+    <color name="football_color">#2F4B4E</color>
+    <color name="indicator_color">#000000</color>
 </resources>
