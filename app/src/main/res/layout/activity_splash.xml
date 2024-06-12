@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splash">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+
+            <RelativeLayout android:id="@+id/page_splash_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__splash_ek2"
+                    android:background="@drawable/_bg__splash_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <ImageView
+                    android:id="@+id/logo_png_2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="355dp"
+                    android:contentDescription="logo_png_2"
+                    android:src="@drawable/logo_png_2" />
+
+                <RelativeLayout android:id="@+id/frame_3"
+                    android:layout_marginTop="429dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/elevate_your_game_and_experience"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="@color/elevate_your_game_and_experience_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="190dp"
+                        android:layout_height="18.2dp"
+                        android:text="@string/elevate_your_game_and_experience_string"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
