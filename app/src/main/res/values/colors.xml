@@ -11,6 +11,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="back">#C8C8C8</color>
 
     <color name="_bg__register_ek2_color">#C8C8C8</color>
     <color name="ellipse_82_color">#0E325E</color>

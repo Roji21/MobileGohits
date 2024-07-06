@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="13dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:contentPaddingTop="5dp"
+    app:contentPaddingBottom="5dp"
+    app:contentPaddingRight="10dp"
+    app:contentPaddingLeft="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="160dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    tools:ignore="MissingConstraints">
 
     <ImageView
         android:id="@+id/imageView"
@@ -34,3 +53,5 @@
         android:text="Price"
         android:paddingTop="4dp" />
 </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
