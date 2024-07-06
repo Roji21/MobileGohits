@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wtf_2022_website_1280x680px_1" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textStyle="bold"
+        android:paddingTop="4dp" />
+
+    <TextView
+        android:id="@+id/authorTextView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:paddingTop="4dp" />
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:paddingTop="4dp" />
+</LinearLayout>
