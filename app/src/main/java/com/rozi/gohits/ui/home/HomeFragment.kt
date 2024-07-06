@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rozi.gohits.MenuItem
+import com.rozi.gohits.Menuconten
 import com.rozi.gohits.MyAdapter
+import com.rozi.gohits.MyAdapter_content
 import com.rozi.gohits.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -48,6 +51,24 @@ class HomeFragment : Fragment() {
 
         val adapter = MyAdapter(menuItems)
         recyclerView.adapter = adapter
+
+        val conrecyclerView: RecyclerView = binding.conten
+        conrecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        conrecyclerView.layoutManager = GridLayoutManager(context, 2)
+
+        val Menuconten = listOf(
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a","a","a")
+        )
+
+        val conadapter = MyAdapter_content(Menuconten)
+        conrecyclerView.adapter = conadapter
 
         return root
     }

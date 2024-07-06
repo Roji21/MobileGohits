@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter_content(private val menuItems: List<Menucontent>) : RecyclerView.Adapter<MyAdapter_content.ViewHolder>() {
+class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.Adapter<MyAdapter_content.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.content_home, parent, false)
