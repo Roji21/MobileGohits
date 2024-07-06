@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
         val recyclerView: RecyclerView = binding.rvCategories
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//        recyclerView.layoutManager = GridLayoutManager(context, 2)
 
         val menuItems = listOf(
             MenuItem("Menu 1"),
@@ -57,10 +58,10 @@ class HomeFragment : Fragment() {
         conrecyclerView.layoutManager = GridLayoutManager(context, 2)
 
         val Menuconten = listOf(
-            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
-            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
-            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
-            Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a1","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a2","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a3","a","a"),
+            Menuconten("wtf_2022_website_1280x680px_1","a4","a","a"),
             Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
             Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
             Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
