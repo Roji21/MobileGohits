@@ -7,6 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.rozi.gohits.Menuconten
+import com.rozi.gohits.Menudashboard
+import com.rozi.gohits.MyAdapter_content
+import com.rozi.gohits.MyAdapter_dashboard
 import com.rozi.gohits.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -32,6 +39,21 @@ class DashboardFragment : Fragment() {
 //        dashboardViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
+        val conrecyclerView: RecyclerView = binding.Dashboard
+        conrecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        val Menudashboard = listOf(
+            Menudashboard("wtf_2022_website_1280x680px_1","a112","a","a","a","a"),
+            Menudashboard("wtf_2022_website_1280x680px_1","a1","a","a","a","a"),
+            Menudashboard("wtf_2022_website_1280x680px_1","a1","a","a","a","a"),
+            Menudashboard("wtf_2022_website_1280x680px_1","a1","a","a","a","a"),
+            Menudashboard("wtf_2022_website_1280x680px_1","a1","a","a","a","a"),
+            Menudashboard("wtf_2022_website_1280x680px_1","a1","a","a","a","a"),
+            Menudashboard("wtf_2022_website_1280x680px_1","a1","a","a","a","a")
+        )
+
+        val conadapter = MyAdapter_dashboard(Menudashboard)
+        conrecyclerView.adapter = conadapter
         return root
     }
 
