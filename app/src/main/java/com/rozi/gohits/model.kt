@@ -5,9 +5,6 @@ data class LoginRequest(
     val password: String
 )
 
-data class LoginResponse(
-    val token: String
-)
 
 data class RegisterRequest(
     val username: String,
