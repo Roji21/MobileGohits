@@ -3,6 +3,7 @@ package com.rozi.gohits
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -43,7 +44,9 @@ class Login : AppCompatActivity() {
 
             call.enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    Log.d("MainActivity", "Response: $response")
                     if (response.isSuccessful && response.body() != null) {
+                        Log.d("MainActivity", "Response body: ${response.body()}")
                         if (response.body()!!.status == "success") {
                             // Login successful, navigate to HomeActivity
                             val intent = Intent(this@Login, MainActivity::class.java)
