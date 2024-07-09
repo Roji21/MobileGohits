@@ -10,7 +10,7 @@ import android.widget.Toast
 import retrofit2.Retrofit
 import com.rozi.gohits.LoginRequest
 import com.rozi.gohits.LoginResponse
-import com.rozi.gohits.APIService
+//import com.rozi.gohits.APIService
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -23,39 +23,42 @@ class Login : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val apiService = retrofit.create(APIService::class.java)
+//        val apiService = retrofit.create(APIService::class.java)
 
         val usernameEditText = findViewById<EditText>(R.id.username)
         val passwordEditText = findViewById<EditText>(R.id.password)
         val loginButton = findViewById<Button>(R.id.sublogin)
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
+            val username = usernameEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
             if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Username and password cannot be empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val loginRequest = LoginRequest(username, password)
-            val call = apiService.login(loginRequest)
+            val apiService = ApiClient.instance.create(ApiService::class.java)
+            val call = apiService.login(username, password)
+
             call.enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                    if (response.isSuccessful) {
-                        // Jika login berhasil, arahkan ke MainActivity
-                        val intent = Intent(this@Login, MainActivity::class.java)
-                        startActivity(intent)
-                        finish() // Menutup LoginActivity
+                    if (response.isSuccessful && response.body() != null) {
+                        if (response.body()!!.status == "success") {
+                            // Login successful, navigate to HomeActivity
+                            val intent = Intent(this@Login, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()  // Optional: Call finish() to prevent user from coming back to login screen
+                        } else {
+                            Toast.makeText(this@Login, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                        }
                     } else {
-                        // Tampilkan pesan error jika respons tidak berhasil
-                        Toast.makeText(this@Login, "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@Login, "Login Failed", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    // Tampilkan pesan error jika terjadi kesalahan jaringan
-                    Toast.makeText(this@Login, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Login, t.message, Toast.LENGTH_SHORT).show()
                 }
             })
         }
