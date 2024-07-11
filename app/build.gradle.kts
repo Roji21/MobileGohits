@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.retrofit) // Retrofit dependensi
     implementation(libs.retrofit.gson) // Retrofit GSON converter
     implementation(libs.gson) // GSON library
+    implementation(libs.appcompact)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

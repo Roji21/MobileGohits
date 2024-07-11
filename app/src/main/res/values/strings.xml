@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Gohits</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">My Event</string>
+    <string name="title_notifications">Add Event</string>
     <string name="register_ek3_string">Register</string>
     <string name="username_string">Username</string>
     <string name="phone_no_string">Phone no</string>
