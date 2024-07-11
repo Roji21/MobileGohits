@@ -101,7 +101,7 @@
                                     android:textColor="@color/username_color"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:hint="@string/username_string"
+                                    android:hint="Email"
                                     android:textColorHint="@color/username_color"
                                     />
 

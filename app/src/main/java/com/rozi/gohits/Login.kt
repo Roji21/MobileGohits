@@ -31,7 +31,7 @@ class Login : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.sublogin)
         val regisButton = findViewById<TextView>(R.id.register)
         regisButton.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
+            val intent = Intent(this, Regis::class.java)
             startActivity(intent)
             finish()
         }
@@ -45,7 +45,7 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val apiService = ApiClient.instance.create(ApiService::class.java)
+            val apiService = ApiClient.getClient(this).create(ApiService::class.java)
             val call = apiService.login(username, password)
 
             call.enqueue(object : Callback<LoginResponse> {
@@ -54,10 +54,11 @@ class Login : AppCompatActivity() {
                     if (response.isSuccessful && response.body() != null) {
                         Log.d("MainActivity", "Response body: ${response.body()}")
                         if (response.body()!!.status == "success") {
-                            // Login successful, navigate to HomeActivity
+                            val userId = response.body()!!.userid
+                            saveSession(userId)
                             val intent = Intent(this@Login, MainActivity::class.java)
                             startActivity(intent)
-                            finish()  // Optional: Call finish() to prevent user from coming back to login screen
+                            finish()
                         } else {
                             Toast.makeText(this@Login, response.body()!!.message, Toast.LENGTH_SHORT).show()
                         }
@@ -72,4 +73,12 @@ class Login : AppCompatActivity() {
             })
         }
     }
+    private fun saveSession(userId: String) {
+        val sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("userId", userId)
+        editor.putBoolean("isLoggedIn", true)  // Menandakan bahwa pengguna telah login
+        editor.apply()
+    }
+
 }

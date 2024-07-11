@@ -54,7 +54,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
                     android:layout_width="315.45dp"
-                    android:layout_height="442.47dp" />
+                    android:layout_height="506.34dp" />
 
 
                 <RelativeLayout android:id="@+id/frame_9"
@@ -102,47 +102,71 @@
                                     android:textColor="@color/username_color"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="@string/username_string"
+                                    android:hint="@string/username_string"
+                                    android:textColorHint="@color/username_color"
+                                    />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/groupemail"
+                                android:layout_marginTop="63.87dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_width="271.45dp"
+                                android:layout_height="43.87dp"
+                                >
+                                <EditText
+                                    android:id="@+id/email"
+                                    android:gravity="center"
+                                    android:background="@drawable/rectangle_12_shape"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/username_color"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Email"
+                                    android:textColorHint="@color/username_color"
                                     />
 
                             </RelativeLayout>
 
 
                             <RelativeLayout android:id="@+id/group_10"
-                                android:layout_marginTop="63.87dp"
-                                android:layout_marginStart="0dp"
-                                android:layout_width="271.45dp"
-                                android:layout_height="43.87dp"
-                                >
-
-                                <EditText android:id="@+id/phone_no"
-                                    android:gravity="center"
-                                    android:background="@drawable/rectangle_12_ek1_shape"
-                                    android:textSize="14sp"
-                                    android:textColor="@color/username_color"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/phone_no_string"
-                                    />
-
-                            </RelativeLayout>
-
-
-                            <RelativeLayout android:id="@+id/group_11"
                                 android:layout_marginTop="127.74dp"
                                 android:layout_marginStart="0dp"
                                 android:layout_width="271.45dp"
                                 android:layout_height="43.87dp"
                                 >
 
-                                <EditText android:id="@+id/password"
+                                <EditText android:id="@+id/pass1"
                                     android:gravity="center"
                                     android:background="@drawable/rectangle_12_ek1_shape"
                                     android:textSize="14sp"
                                     android:textColor="@color/username_color"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="Password"
+                                    android:hint="@string/password_string"
+                                    android:textColorHint="@color/username_color"
+                                    />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout android:id="@+id/group_11"
+                                android:layout_marginTop="191.61dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_width="271.45dp"
+                                android:layout_height="43.87dp"
+                                >
+
+                                <EditText android:id="@+id/pass2"
+                                    android:gravity="center"
+                                    android:background="@drawable/rectangle_12_ek1_shape"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/username_color"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Re-enter Password"
+                                    android:textColorHint="@color/username_color"
                                     />
 
                             </RelativeLayout>
@@ -151,7 +175,7 @@
 
 
                         <RelativeLayout android:id="@+id/frame_6"
-                            android:layout_marginTop="207.6dp"
+                            android:layout_marginTop="271.47dp"
                             android:layout_marginStart="0dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -166,7 +190,7 @@
 
                                 <Button
                                     android:background="@drawable/rectangle_14_shape"
-                                    android:id="@+id/rectangle_14"
+                                    android:id="@+id/regis"
                                     android:layout_width="271.45dp"
                                     android:layout_height="43.87dp"
                                     android:layout_marginStart="0dp"
