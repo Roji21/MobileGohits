@@ -9,9 +9,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import retrofit2.Retrofit
-import com.rozi.gohits.LoginRequest
-import com.rozi.gohits.LoginResponse
-//import com.rozi.gohits.APIService
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -55,7 +52,9 @@ class Login : AppCompatActivity() {
                         Log.d("MainActivity", "Response body: ${response.body()}")
                         if (response.body()!!.status == "success") {
                             val userId = response.body()!!.userid
-                            saveSession(userId)
+                            val usernama = response.body()!!.userid
+                            val userfoto = response.body()!!.userid
+                            saveSession(userId, usernama, userfoto)
                             val intent = Intent(this@Login, MainActivity::class.java)
                             startActivity(intent)
                             finish()
@@ -73,10 +72,12 @@ class Login : AppCompatActivity() {
             })
         }
     }
-    private fun saveSession(userId: String) {
+    private fun saveSession(userId: String, usernama: String, userfoto: String) {
         val sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("userId", userId)
+        editor.putString("usernama", usernama)
+        editor.putString("userfoto", userfoto)
         editor.putBoolean("isLoggedIn", true)  // Menandakan bahwa pengguna telah login
         editor.apply()
     }
