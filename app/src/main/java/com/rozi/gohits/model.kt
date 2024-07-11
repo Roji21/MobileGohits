@@ -13,5 +13,6 @@ data class RegisterRequest(
 )
 
 data class RegisterResponse(
+    val status: String,
     val message: String
 )

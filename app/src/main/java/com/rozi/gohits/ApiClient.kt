@@ -1,15 +1,24 @@
-package com.rozi.gohits
-
+import android.content.Context
+import com.rozi.gohits.cert.getUnsafeOkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private const val BASE_URL = "http://gohit.id/"
+    private var retrofit: Retrofit? = null
 
-    val instance: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+    fun getClient(context: Context): Retrofit {
+        if (retrofit == null) {
+            val client = getUnsafeOkHttpClient(context)
+
+            retrofit = Retrofit.Builder()
+                .baseUrl("https://gohit.id/")
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
+        return retrofit!!
     }
+
+    val instance: Retrofit
+        get() = retrofit ?: throw IllegalStateException("ApiClient not initialized")
 }

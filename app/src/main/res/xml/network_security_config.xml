@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">https://gohit.id/</domain>
+        <trust-anchors>
+            <certificates src="@raw/gohit" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
