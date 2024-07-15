@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.Adapter<MyAdapter_content.ViewHolder>() {
 
@@ -21,21 +22,25 @@ class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.
         val menuItem = menuItems[position]
         val context = holder.itemView.context
 
-        // Ambil resource R.drawable berdasarkan nama file foto
-        val imageResId = context.resources.getIdentifier(menuItem.img.lowercase(), "drawable", context.packageName)
+        // URL dasar untuk gambar
+        val baseUrl = "https://gohit.id/assets/image/"
+        val imageUrl = baseUrl + menuItem.img // Menggabungkan URL dasar dengan nama file gambar
 
-        // Atur gambar pada ImageView
-        holder.imageView.setImageResource(imageResId)
+        // Gunakan Glide untuk memuat gambar
+        Glide.with(context)
+            .load(imageUrl)
+            .into(holder.imageView)
+
         holder.titleTextView.text = menuItem.judul
         holder.auth.text = menuItem.aut
         holder.price.text = menuItem.price
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             try {
-//                Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.judul} ", Toast.LENGTH_SHORT).show()
-//                val context = holder.itemView.context
-//                val intent = Intent(context, detail::class.java)
-//                intent.putExtra("id", menuItem.id)
-//                context.startActivity(intent)
+                // Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.judul} ", Toast.LENGTH_SHORT).show()
+                // val context = holder.itemView.context
+                // val intent = Intent(context, detail::class.java)
+                // intent.putExtra("id", menuItem.id)
+                // context.startActivity(intent)
 
             } catch (e: Exception) {
                 // Handle the exception here
@@ -44,6 +49,7 @@ class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.
             }
         }
     }
+
 
     override fun getItemCount(): Int {
         return menuItems.size
