@@ -25,9 +25,8 @@ interface ApiService {
     ): Call<RegisterResponse>
 
 
-    @FormUrlEncoded
     @GET("api/home")
-    fun home(): Call<menuhome>
+    fun home(): Call<List<menuhome>>
     @FormUrlEncoded
     @GET("api/home/{id}")
     fun getUserById(@Path("id") id: Int): Call<menuhome>
