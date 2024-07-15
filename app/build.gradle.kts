@@ -54,6 +54,8 @@ dependencies {
     implementation(libs.retrofit.gson) // Retrofit GSON converter
     implementation(libs.gson) // GSON library
     implementation(libs.appcompact)
+    implementation(libs.glidecom)
+    implementation(libs.glide)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
