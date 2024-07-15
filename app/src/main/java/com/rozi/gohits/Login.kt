@@ -52,9 +52,8 @@ class Login : AppCompatActivity() {
                         Log.d("MainActivity", "Response body: ${response.body()}")
                         if (response.body()!!.status == "success") {
                             val userId = response.body()!!.userid
-                            val usernama = response.body()!!.userid
-                            val userfoto = response.body()!!.userid
-                            saveSession(userId, usernama, userfoto)
+                            val usernama = response.body()!!.usernama
+                            saveSession(userId, usernama)
                             val intent = Intent(this@Login, MainActivity::class.java)
                             startActivity(intent)
                             finish()
@@ -72,13 +71,12 @@ class Login : AppCompatActivity() {
             })
         }
     }
-    private fun saveSession(userId: String, usernama: String, userfoto: String) {
+    private fun saveSession(userId: String, usernama: String) {
         val sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("userId", userId)
         editor.putString("usernama", usernama)
-        editor.putString("userfoto", userfoto)
-        editor.putBoolean("isLoggedIn", true)  // Menandakan bahwa pengguna telah login
+        editor.putBoolean("isLoggedIn", true)
         editor.apply()
     }
 

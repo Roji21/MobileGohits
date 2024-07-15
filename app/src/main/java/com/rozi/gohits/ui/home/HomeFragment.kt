@@ -1,10 +1,12 @@
 package com.rozi.gohits.ui.home
 
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,6 +17,9 @@ import com.rozi.gohits.Menuconten
 import com.rozi.gohits.MyAdapter
 import com.rozi.gohits.MyAdapter_content
 import com.rozi.gohits.databinding.FragmentHomeBinding
+import retrofit2.*
+import android.content.SharedPreferences
+
 
 class HomeFragment : Fragment() {
 
@@ -67,6 +72,11 @@ class HomeFragment : Fragment() {
             Menuconten("wtf_2022_website_1280x680px_1","a","a","a"),
             Menuconten("wtf_2022_website_1280x680px_1","a","a","a")
         )
+//        val userSession = getUserSession()
+//        if (userSession != null) {
+//            val (userId, usernama) = userSession
+//            binding.nama.text = usernama
+//        }
 
         val conadapter = MyAdapter_content(Menuconten)
         conrecyclerView.adapter = conadapter
@@ -78,4 +88,15 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+//    private fun getUserSession(): Pair<String, String>? {
+//        val sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE)
+//        val userId = sharedPreferences.getString("userId", null)
+//        val usernama = sharedPreferences.getString("usernama", null)
+//        return if (userId != null && usernama != null) {
+//            Pair(userId, usernama)
+//        } else {
+//            null
+//        }
+//    }
+
 }
