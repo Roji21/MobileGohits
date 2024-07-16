@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class MyAdapter_dashboard(private val menuItems: List<Menudashboard>) : RecyclerView.Adapter<MyAdapter_dashboard.ViewHolder>() {
 
@@ -21,11 +22,11 @@ class MyAdapter_dashboard(private val menuItems: List<Menudashboard>) : Recycler
         val menuItem = menuItems[position]
         val context = holder.itemView.context
 
-        // Ambil resource R.drawable berdasarkan nama file foto
-        val imageResId = context.resources.getIdentifier(menuItem.img.lowercase(), "drawable", context.packageName)
-
-        // Atur gambar pada ImageView
-        holder.imageView.setImageResource(imageResId)
+        val baseUrl = "https://gohit.id/assets/image/"
+        val imageUrl = baseUrl + menuItem.img
+        Glide.with(context)
+            .load(imageUrl)
+            .into(holder.imageView)
         holder.titleTextView.text = menuItem.judul
         holder.auth.text = menuItem.aut
         holder.participant.text = menuItem.participant
