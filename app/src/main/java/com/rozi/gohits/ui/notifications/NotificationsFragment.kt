@@ -2,12 +2,17 @@ package com.rozi.gohits.ui.notifications
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.rozi.gohits.R
@@ -31,7 +36,8 @@ class NotificationsFragment : Fragment() {
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val items = listOf("SELECT", "Badminton", "FootBall", "Pimpong", "Running", "Esport")
+        val items = listOf("SELECT CATEGORY", "Badminton", "FootBall", "Pimpong", "Running", "Esport")
+        val par = listOf("SELECT PARTICIPANT", "8")
 
         val adapter = object : ArrayAdapter<String>(
             requireContext(),
@@ -50,6 +56,26 @@ class NotificationsFragment : Fragment() {
                 return view
             }
         }
+
+        val adapter1 = object : ArrayAdapter<String>(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            par
+        ) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = super.getView(position, convertView, parent)
+                (view as TextView).setTextColor(resources.getColor(R.color.white))
+                return view
+            }
+
+            override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = super.getDropDownView(position, convertView, parent)
+                (view as TextView).setTextColor(resources.getColor(R.color.black))
+                return view
+            }
+        }
+
+        binding.participant.adapter = adapter1
         binding.category.adapter = adapter
 
         binding.date.setOnClickListener {
@@ -58,6 +84,9 @@ class NotificationsFragment : Fragment() {
 
         binding.time.setOnClickListener {
             showTimePickerDialog()
+        }
+        binding.buttonUploadImage.setOnClickListener {
+            selectImage()
         }
 
         return root
@@ -96,6 +125,20 @@ class NotificationsFragment : Fragment() {
             true
         )
         timePickerDialog.show()
+    }
+
+    private fun selectImage() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        imagePickerLauncher.launch(intent)
+    }
+
+    private val imagePickerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == AppCompatActivity.RESULT_OK && result.data != null) {
+            val selectedImageUri: Uri? = result.data?.data
+            selectedImageUri?.let {
+                binding.imageView.setImageURI(it)
+            }
+        }
     }
 
     override fun onDestroyView() {
