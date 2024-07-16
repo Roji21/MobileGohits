@@ -60,18 +60,12 @@
                     android:layout_height="match_parent"
                     android:text="Time"
                     android:textStyle="bold"/>
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Location"
                     android:id="@+id/time"/>
-
-
-
             </LinearLayout>
-
-
         </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,14 +78,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     tools:ignore="MissingConstraints">
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="judul"
                         android:textStyle="bold"
                         android:id="@+id/judul"/>
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -104,7 +96,6 @@
                         android:textStyle="bold"
                         android:id="@+id/partisip"/>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,10 +113,7 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/maps" />
                 </LinearLayout>
-
             </LinearLayout>
-
-
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
