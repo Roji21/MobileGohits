@@ -64,7 +64,7 @@ class DashboardFragment : Fragment() {
                     val menuHomeResponse = response.body()
                     if (menuHomeResponse != null) {
                         val menudashboard = menuHomeResponse.data.map {
-                            Menudashboard(it.upload, it.title, it.organizer, it.location, it.participant, it.time)
+                            Menudashboard(it.upload, it.title, it.organizer, it.participant, it.location, it.time)
                         }
                         val conadapter = MyAdapter_dashboard(menudashboard)
                         binding.Dashboard.adapter = conadapter
