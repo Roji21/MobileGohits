@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_braket"
-        android:name="com.rozi.gohits.ui.braket.BracketsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_brackets_colomn" />
+        android:name="com.rozi.gohits.ui.brackets.BracketsFragment"
+        android:label="Detalevent"
+        tools:layout="@layout/fragment_brackets" />
 </navigation>
