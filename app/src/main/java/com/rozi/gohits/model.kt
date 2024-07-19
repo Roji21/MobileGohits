@@ -28,3 +28,7 @@ data class MenuDasItem(
     val participant: String,
     val location: String
 )
+data class UploadResponse(
+    val success: Boolean,
+    val message: String
+)
