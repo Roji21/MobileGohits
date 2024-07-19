@@ -56,6 +56,9 @@ dependencies {
     implementation(libs.gson) // GSON library
     implementation(libs.appcompact)
     implementation(libs.glide)
+    implementation(libs.okhttp3)
+    implementation(libs.logging.interceptor)
+    implementation(libs.glide)
     kapt(libs.glide.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
