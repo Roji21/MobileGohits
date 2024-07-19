@@ -17,7 +17,9 @@ import com.rozi.gohits.MenuItem
 import com.rozi.gohits.Menuconten
 import com.rozi.gohits.MyAdapter
 import com.rozi.gohits.MyAdapter_content
+import com.rozi.gohits.R
 import com.rozi.gohits.databinding.FragmentHomeBinding
+import com.rozi.gohits.ui.brackets.BracketsFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
