@@ -7,134 +7,134 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
-    <ScrollView
-        android:id="@+id/scroll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <View   android:id="@+id/rectangle_1708"
-                android:background="@drawable/rectangle_1708_shape"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_width="500dp"
-                android:layout_height="280dp" />
-
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
+
+                <View   android:id="@+id/rectangle_1708"
+                    android:background="@drawable/rectangle_1708_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="500dp"
+                    android:layout_height="280dp" />
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                        app:layout_constraintTop_toTopOf="@+id/text_notification"
-                        app:srcCompat="@drawable/image_1" />
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Varis Anggito"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        app:layout_constraintStart_toStartOf="@+id/text_notification"
-                        app:layout_constraintTop_toBottomOf="@+id/text_notification" />
-
-                    <TextView
-                        android:id="@+id/text_notification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Name"
-                        android:textColor="#dd3d00"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/guideline2"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_begin="16dp" />
-
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_end="16dp" />
-
-                    <RelativeLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-                        <RelativeLayout
-                            android:id="@+id/constraintLayout"
-                            android:layout_marginTop="90dp"
-                            android:layout_width="377dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/rectangle"
-                            android:gravity="center_horizontal"
-                            tools:ignore="MissingConstraints">
+                            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                            app:layout_constraintTop_toTopOf="@+id/text_notification"
+                            app:srcCompat="@drawable/image_1" />
 
-                            <TextView android:id="@+id/addeve"
-                                android:textSize="35sp"
-                                android:gravity="center"
-                                android:textColor="@color/white"
-                                android:layout_marginTop="20dp"
-                                android:layout_width="300dp"
-                                android:layout_height="56.5dp"
-                                android:text="ADD EVENT"
-                                />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Varis Anggito"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="@+id/text_notification"
+                            app:layout_constraintTop_toBottomOf="@+id/text_notification" />
 
-                            <RelativeLayout android:id="@+id/title1"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginStart="0dp"
-                                android:layout_width="300dp"
-                                android:textAlignment="center"
-                                android:layout_height="43.87dp"
-                                android:layout_below="@id/addeve"
-                                >
-                                <EditText android:id="@+id/title"
-                                    android:textAlignment="center"
-                                    android:background="@drawable/rectangle_12_shape"
-                                    android:textSize="14sp"
-                                    android:textColor="@color/username_color"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:hint="TITLE"
-                                    android:textColorHint="@color/username_color"
+                        <TextView
+                            android:id="@+id/text_notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Name"
+                            android:textColor="#dd3d00"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/guideline2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_begin="16dp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_end="16dp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+                            <RelativeLayout
+                                android:id="@+id/constraintLayout"
+                                android:layout_marginTop="90dp"
+                                android:layout_width="377dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rectangle"
+                                android:gravity="center_horizontal"
+                                tools:ignore="MissingConstraints">
+
+                                <TextView android:id="@+id/addeve"
+                                    android:textSize="35sp"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="56.5dp"
+                                    android:text="ADD EVENT"
                                     />
 
-                            </RelativeLayout>
+                                <RelativeLayout android:id="@+id/title1"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_width="300dp"
+                                    android:textAlignment="center"
+                                    android:layout_height="43.87dp"
+                                    android:layout_below="@id/addeve"
+                                    >
+                                    <EditText android:id="@+id/title"
+                                        android:textAlignment="center"
+                                        android:background="@drawable/rectangle_12_shape"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/username_color"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="TITLE"
+                                        android:textColorHint="@color/username_color"
+                                        />
 
-                            <RelativeLayout
-                                android:id="@+id/category1"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginStart="0dp"
-                                android:layout_width="300dp"
-                                android:textAlignment="center"
-                                android:layout_height="43.87dp"
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/category1"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_width="300dp"
+                                    android:textAlignment="center"
+                                    android:layout_height="43.87dp"
                                 android:layout_below="@id/title1">
 
                                 <Spinner

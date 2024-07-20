@@ -2,13 +2,333 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/back"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View   android:id="@+id/rectangle_1708"
+                android:background="@drawable/rectangle_1708_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="500dp"
+                android:layout_height="280dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                        app:layout_constraintTop_toTopOf="@+id/text_notification"
+                        app:srcCompat="@drawable/image_1" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Varis Anggito"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/text_notification"
+                        app:layout_constraintTop_toBottomOf="@+id/text_notification" />
+
+                    <TextView
+                        android:id="@+id/text_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Name"
+                        android:textColor="#dd3d00"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="16dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="16dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="90dp"
+                            android:background="@drawable/rectangle">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true">
+
+                                <RelativeLayout
+                                    android:id="@+id/kaka"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+                                    <RelativeLayout
+                                        android:id="@+id/firstLinearLayout"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_width="160dp"
+                                        android:layout_height="175dp"
+                                        android:background="@drawable/roundede"
+                                        android:layout_marginEnd="10dp">
+                                        <TextView
+                                            android:layout_width="120dp"
+                                            android:id="@+id/judu"
+                                            android:textAlignment="center"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_height="40dp"
+                                            android:text="JUDUL"
+                                            android:textSize="13dp"
+                                            android:textStyle="bold"
+                                            android:layout_centerHorizontal="true">
+                                        </TextView>
+                                        <RelativeLayout
+                                            android:id="@+id/date1"
+                                            android:background="#C53F3E"
+                                            android:layout_width="160dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/judu">
+                                            <TextView
+                                                android:id="@+id/datee"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Date :">
+                                            </TextView>
+                                            <TextView
+                                                android:id="@+id/date"
+                                                android:textSize="13dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_toEndOf="@+id/datee">
+                                            </TextView>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/time1"
+                                            android:layout_width="160dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/date1">
+                                            <TextView
+                                                android:id="@+id/timee"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Time :">
+                                            </TextView>
+                                            <TextView
+                                                android:id="@+id/time"
+                                                android:textSize="13dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_toEndOf="@+id/timee">
+                                            </TextView>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/organ1"
+                                            android:layout_width="160dp"
+                                            android:background="#C53F3E"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/time1">
+                                            <TextView
+                                                android:id="@+id/organn"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Organizer :">
+                                            </TextView>
+                                            <TextView
+                                                android:id="@+id/organizer"
+                                                android:textSize="13dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_toEndOf="@+id/organn">
+                                            </TextView>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/loca1"
+                                            android:layout_width="160dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/organ1">
+                                            <TextView
+                                                android:id="@+id/locaa"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Location :">
+                                            </TextView>
+                                            <TextView
+                                                android:id="@+id/location"
+                                                android:textSize="13dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_toEndOf="@+id/locaa">
+                                            </TextView>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/part1"
+                                            android:background="#C53F3E"
+                                            android:layout_width="160dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/loca1">
+                                            <TextView
+                                                android:id="@+id/partt"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="13dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Participant :">
+                                            </TextView>
+                                            <TextView
+                                                android:id="@+id/parti"
+                                                android:textSize="13dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_toEndOf="@+id/partt">
+                                            </TextView>
+                                        </RelativeLayout>
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/secondLinearLayout"
+                                        android:background="@drawable/roundede"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_width="160dp"
+                                        android:layout_height="175dp"
+                                        android:layout_toEndOf="@id/firstLinearLayout">
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </ImageView>
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:id="@+id/pesertacontainer"
+                                    android:layout_width="330dp"
+                                    android:background="@drawable/roundede"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_height="200dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@id/kaka">
+                                    <TextView
+                                        android:id="@+id/ja"
+                                        android:layout_width="wrap_content"
+                                        android:textAlignment="center"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Participants"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold"
+                                        android:layout_centerHorizontal="true">
+                                    </TextView>
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rvCategories"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_below="@+id/ja"/>
+                                </RelativeLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:textStyle="bold"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@id/pesertacontainer"
+                                    android:layout_height="wrap_content"
+                                    android:text="DRAWS">
+                                </TextView>
+                                <ScrollView
+                                    android:id="@+id/bracketcontainer"
+                                    android:layout_width="330dp"
+                                    android:background="@drawable/roundede"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_height="400dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@id/pesertacontainer">
+                                </ScrollView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:textStyle="bold"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@id/bracketcontainer"
+                                    android:layout_height="wrap_content"
+                                    android:text="TOP 3 LEADERBOARD">
+                                </TextView>
+                                <RelativeLayout
+                                    android:layout_width="330dp"
+                                    android:background="@drawable/roundede"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_marginBottom="100dp"
+                                    android:layout_height="150dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@id/bracketcontainer">
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
 </FrameLayout>
