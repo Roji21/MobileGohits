@@ -9,41 +9,40 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_width="171dp"
+            android:layout_height="62dp"
             android:background="@drawable/roundeder"
             android:orientation="horizontal"
             android:padding="8dp"
             tools:ignore="MissingConstraints">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="40dp"
-                android:layout_height="35dp"
-                android:background="@drawable/roundeder"
-                android:src="@drawable/wtf_2022_website_1280x680px_1" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/myPict"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
 
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textStyle="bold"
-                android:paddingTop="4dp" />
+                android:src="@drawable/wtf_2022_website_1280x680px_1"/>
 
-            <TextView
-                android:id="@+id/authorTextView"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Author"
-                android:paddingTop="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:text="Title"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/priceTextView"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Price"
-                android:paddingTop="4dp" />
+                <TextView
+                    android:id="@+id/authorTextView"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:text="Author" />
+
+            </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
