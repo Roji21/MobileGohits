@@ -11,7 +11,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.Adapter<MyAdapter_content.ViewHolder>() {
+class MyAdapter_content(private var menuItems: List<MenuHomeItem>) : RecyclerView.Adapter<MyAdapter_content.ViewHolder>() {
+
+    private val originalList: List<MenuHomeItem> = menuItems.toList() // Simpan salinan daftar asli
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.content_home, parent, false)
@@ -24,19 +26,19 @@ class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.
 
         // URL dasar untuk gambar
         val baseUrl = "https://gohit.id/assets/image/"
-        val imageUrl = baseUrl + menuItem.img // Menggabungkan URL dasar dengan nama file gambar
+        val imageUrl = baseUrl + menuItem.upload // Menggabungkan URL dasar dengan nama file gambar
 
         // Gunakan Glide untuk memuat gambar
         Glide.with(context)
             .load(imageUrl)
             .into(holder.imageView)
 
-        holder.titleTextView.text = menuItem.judul
-        holder.auth.text = menuItem.aut
+        holder.titleTextView.text = menuItem.title
+        holder.auth.text = menuItem.organizer
         holder.price.text = menuItem.price
         holder.itemView.setOnClickListener {
             try {
-                // Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.judul} ", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.title} ", Toast.LENGTH_SHORT).show()
                 // val context = holder.itemView.context
                 // val intent = Intent(context, detail::class.java)
                 // intent.putExtra("id", menuItem.id)
@@ -50,9 +52,18 @@ class MyAdapter_content(private val menuItems: List<Menuconten>) : RecyclerView.
         }
     }
 
-
     override fun getItemCount(): Int {
         return menuItems.size
+    }
+
+    // Metode untuk memfilter data
+    fun filterData(filter: String) {
+        menuItems = if (filter == "All") {
+            originalList
+        } else {
+            originalList.filter { it.type_sport.contains(filter, true) }
+        }
+        notifyDataSetChanged()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
