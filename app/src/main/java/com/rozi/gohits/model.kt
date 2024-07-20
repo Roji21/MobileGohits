@@ -13,7 +13,8 @@ data class MenuHomeItem(
     val title: String,
     val upload: String,
     val price: String,
-    val organizer: String
+    val organizer: String,
+    val type_sport: String
 )
 data class MenuDasResponse(
     val status: String,

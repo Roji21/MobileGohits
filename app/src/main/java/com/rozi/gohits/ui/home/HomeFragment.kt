@@ -11,31 +11,25 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.rozi.gohits.ApiService
-import com.rozi.gohits.MenuHomeResponse
-import com.rozi.gohits.MenuItem
-import com.rozi.gohits.Menuconten
-import com.rozi.gohits.MyAdapter
-import com.rozi.gohits.MyAdapter_content
-import com.rozi.gohits.R
+import com.rozi.gohits.*
 import com.rozi.gohits.databinding.FragmentHomeBinding
-import com.rozi.gohits.ui.brackets.BracketsFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnMenuItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var conAdapter: MyAdapter_content
+    private var originalMenuContents: List<MenuHomeItem> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -43,6 +37,7 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         val menuItems = listOf(
+            MenuItem("All"),
             MenuItem("Badminton"),
             MenuItem("FootBall"),
             MenuItem("Pimpong"),
@@ -50,16 +45,14 @@ class HomeFragment : Fragment() {
             MenuItem("Esport")
         )
 
-        val adapter = MyAdapter(menuItems)
+        val adapter = MyAdapter(menuItems, this)
         recyclerView.adapter = adapter
 
         val conrecyclerView: RecyclerView = binding.conten
         conrecyclerView.layoutManager = GridLayoutManager(context, 2)
 
-        // Ambil data dari API
         fetchMenuHomeData()
 
-        // Mengakses sesi pengguna dan menampilkan nama pengguna
         val userSession = getUserSession()
         if (userSession != null) {
             val (userId, usernama) = userSession
@@ -74,6 +67,10 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onMenuItemClick(menuItem: MenuItem) {
+        conAdapter.filterData(menuItem.nama)
     }
 
     private fun getUserSession(): Pair<String, String>? {
@@ -94,11 +91,11 @@ class HomeFragment : Fragment() {
                 if (response.isSuccessful) {
                     val menuHomeResponse = response.body()
                     if (menuHomeResponse != null) {
-                        val menuContents = menuHomeResponse.data.map {
-                            Menuconten(it.upload, it.title, it.organizer, it.price)
+                        originalMenuContents = menuHomeResponse.data.map {
+                            MenuHomeItem(it.title, it.upload, it.price, it.organizer, it.type_sport)
                         }
-                        val conadapter = MyAdapter_content(menuContents)
-                        binding.conten.adapter = conadapter
+                        conAdapter = MyAdapter_content(originalMenuContents)
+                        binding.conten.adapter = conAdapter
                     } else {
                         Toast.makeText(context, "Data tidak ditemukan", Toast.LENGTH_SHORT).show()
                     }
