@@ -46,4 +46,6 @@ interface ApiService {
         @Part("category") category: RequestBody,
         @Part("participant") participant: RequestBody
     ): Call<UploadResponse>
+    @GET("api/det")
+    fun det(): Call<MenuDasResponse>
 }
