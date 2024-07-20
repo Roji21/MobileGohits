@@ -32,6 +32,9 @@
         <activity
             android:name=".Regis"
             android:exported="false"></activity>
+        <activity
+            android:name=".ui.brackets.BracketsFragment"
+            android:exported="false"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>

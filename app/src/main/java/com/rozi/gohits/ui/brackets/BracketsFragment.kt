@@ -1,36 +1,24 @@
 package com.rozi.gohits.ui.brackets
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.rozi.gohits.R
+import androidx.appcompat.app.AppCompatActivity
+import com.rozi.gohits.MainActivity
 import com.rozi.gohits.databinding.FragmentBracketsBinding
 
 
-class BracketsFragment : Fragment() {
+class BracketsFragment : AppCompatActivity() {
+    private lateinit var binding: FragmentBracketsBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    private var _binding: FragmentBracketsBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val bracketViewModel =
-            ViewModelProvider(this).get(BracketViewModel::class.java)
-
-        _binding = FragmentBracketsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        return root
+        binding = FragmentBracketsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        intent = Intent(this@BracketsFragment, MainActivity::class.java)
+        startActivity(intent)
     }
 }

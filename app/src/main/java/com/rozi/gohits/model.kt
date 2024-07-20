@@ -33,3 +33,16 @@ data class UploadResponse(
     val success: Boolean,
     val message: String
 )
+data class Det(
+    val status: String,
+    val data: List<MenuDet>
+)
+
+data class MenuDet(
+    val title: String,
+    val upload: String,
+    val organizer: String,
+    val time: String,
+    val participant: String,
+    val location: String
+)
