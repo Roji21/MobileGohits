@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.rozi.gohits.ui.brackets.BracketsFragment
 
 class MyAdapter_content(private var menuItems: List<MenuHomeItem>) : RecyclerView.Adapter<MyAdapter_content.ViewHolder>() {
 
@@ -38,11 +39,11 @@ class MyAdapter_content(private var menuItems: List<MenuHomeItem>) : RecyclerVie
         holder.price.text = menuItem.price
         holder.itemView.setOnClickListener {
             try {
-                // Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.title} ", Toast.LENGTH_SHORT).show()
-                // val context = holder.itemView.context
-                // val intent = Intent(context, detail::class.java)
-                // intent.putExtra("id", menuItem.id)
-                // context.startActivity(intent)
+                 Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.title} ", Toast.LENGTH_SHORT).show()
+                 val context = holder.itemView.context
+                 val intent = Intent(context, BracketsFragment::class.java)
+                 intent.putExtra("NAMA", menuItem.title)
+                 context.startActivity(intent)
 
             } catch (e: Exception) {
                 // Handle the exception here

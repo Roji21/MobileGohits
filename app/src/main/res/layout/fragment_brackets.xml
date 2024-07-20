@@ -281,7 +281,7 @@
                                         android:layout_centerHorizontal="true">
                                     </TextView>
                                     <androidx.recyclerview.widget.RecyclerView
-                                        android:id="@+id/rvCategories"
+                                        android:id="@+id/rvParticipants"
                                         android:orientation="horizontal"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -297,15 +297,387 @@
                                     android:layout_height="wrap_content"
                                     android:text="DRAWS">
                                 </TextView>
-                                <ScrollView
+                                <RelativeLayout
                                     android:id="@+id/bracketcontainer"
                                     android:layout_width="330dp"
                                     android:background="@drawable/roundede"
                                     android:layout_marginTop="40dp"
                                     android:layout_height="400dp"
-                                    android:layout_centerHorizontal="true"
                                     android:layout_below="@id/pesertacontainer">
-                                </ScrollView>
+                                    <ScrollView
+                                        android:id="@+id/bracketsv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/roundede"
+                                        android:fillViewport="true">
+
+                                        <HorizontalScrollView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fillViewport="true">
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content">
+
+                                                <!-- First LinearLayout -->
+                                                <LinearLayout
+                                                    android:id="@+id/bc1"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="30dp"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg1"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:id="@+id/bctitle1"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+
+                                                        <TextView
+                                                            android:id="@+id/bcautor1"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+
+                                                <!-- Second LinearLayout -->
+                                                <LinearLayout
+                                                    android:id="@+id/bc2"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_below="@id/bc1"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg2"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:id="@+id/bctitle2"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+
+                                                        <TextView
+                                                            android:id="@+id/bcautor2"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+
+                                                <!-- Third LinearLayout -->
+                                                <LinearLayout
+                                                    android:id="@+id/bc3"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="30dp"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_below="@+id/bc2"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg3"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+
+                                                        <TextView
+                                                            android:id="@+id/bctitle3"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+
+                                                        <TextView
+                                                            android:id="@+id/bcautor3"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                                <LinearLayout
+                                                    android:id="@+id/bc4"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_below="@+id/bc3"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg4"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+                                                        <TextView
+                                                            android:id="@+id/bctitle4"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+                                                        <TextView
+                                                            android:id="@+id/bcautor4"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                                <LinearLayout
+                                                    android:id="@+id/bc5"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="30dp"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_below="@+id/bc4"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg5"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+                                                        <TextView
+                                                            android:id="@+id/bctitle5"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+                                                        <TextView
+                                                            android:id="@+id/bcautor5"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                                <LinearLayout
+                                                    android:id="@+id/bc6"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_below="@+id/bc5"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg6"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+                                                        <TextView
+                                                            android:id="@+id/bctitle6"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+                                                        <TextView
+                                                            android:id="@+id/bcautor6"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                                <LinearLayout
+                                                    android:id="@+id/bc7"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="30dp"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_below="@+id/bc6"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg7"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+                                                        <TextView
+                                                            android:id="@+id/bctitle7"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+                                                        <TextView
+                                                            android:id="@+id/bcautor7"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                                <LinearLayout
+                                                    android:id="@+id/bc8"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginBottom="30dp"
+                                                    android:layout_below="@+id/bc7"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg8"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+                                                        <TextView
+                                                            android:id="@+id/bctitle8"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+                                                        <TextView
+                                                            android:id="@+id/bcautor8"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                                <LinearLayout
+                                                    android:id="@+id/bc9"
+                                                    android:layout_width="171dp"
+                                                    android:layout_height="61dp"
+                                                    android:layout_marginTop="65dp"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_toEndOf="@+id/bc1"
+                                                    android:background="@drawable/roundeder"
+                                                    android:orientation="horizontal"
+                                                    android:padding="8dp"
+                                                    tools:ignore="MissingConstraints">
+
+                                                    <de.hdodenhof.circleimageview.CircleImageView
+                                                        android:id="@+id/bcimg9"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                                    <LinearLayout
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="50dp"
+                                                        android:layout_marginLeft="5dp"
+                                                        android:orientation="vertical">
+                                                        <TextView
+                                                            android:id="@+id/bctitle9"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Title"
+                                                            android:textStyle="bold" />
+                                                        <TextView
+                                                            android:id="@+id/bcautor9"
+                                                            android:layout_width="150dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingTop="4dp"
+                                                            android:text="Author" />
+                                                    </LinearLayout>
+                                                </LinearLayout>
+                                            </RelativeLayout>
+                                        </HorizontalScrollView>
+                                    </ScrollView>
+                                </RelativeLayout>
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_marginTop="10dp"
@@ -323,6 +695,117 @@
                                     android:layout_height="150dp"
                                     android:layout_centerHorizontal="true"
                                     android:layout_below="@id/bracketcontainer">
+                                    <LinearLayout
+                                        android:id="@+id/juara1"
+                                        android:layout_width="171dp"
+                                        android:layout_height="62dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:background="@drawable/roundeder"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp"
+                                        tools:ignore="MissingConstraints">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/myPict"
+                                            android:layout_width="50dp"
+                                            android:layout_height="match_parent"
+                                            android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:id="@+id/titleTextView"
+                                                android:layout_width="150dp"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="4dp"
+                                                android:text="Title"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:id="@+id/authorTextView"
+                                                android:layout_width="150dp"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="4dp"
+                                                android:text="Author" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="171dp"
+                                        android:id="@+id/juara2"
+                                        android:layout_below="@+id/juara1"
+                                        android:layout_height="62dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@drawable/roundeder"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp"
+                                        tools:ignore="MissingConstraints">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/myPict2"
+                                            android:layout_width="50dp"
+                                            android:layout_height="match_parent"
+                                            android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:id="@+id/titleTextView2"
+                                                android:layout_width="150dp"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="4dp"
+                                                android:text="Title"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:id="@+id/authorTextView2"
+                                                android:layout_width="150dp"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="4dp"
+                                                android:text="Author" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="171dp"
+                                        android:layout_below="@+id/juara1"
+                                        android:layout_height="62dp"
+                                        android:layout_toEndOf="@+id/juara2"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@drawable/roundeder"
+                                        android:orientation="horizontal"
+                                        android:padding="8dp"
+                                        tools:ignore="MissingConstraints">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/myPict3"
+                                            android:layout_width="50dp"
+                                            android:layout_height="match_parent"
+                                            android:src="@drawable/wtf_2022_website_1280x680px_1"/>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:id="@+id/titleTextView3"
+                                                android:layout_width="150dp"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="4dp"
+                                                android:text="Title"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:id="@+id/authorTextView3"
+                                                android:layout_width="150dp"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="4dp"
+                                                android:text="Author" />
+                                        </LinearLayout>
+                                    </LinearLayout>
                                 </RelativeLayout>
                             </RelativeLayout>
                         </RelativeLayout>

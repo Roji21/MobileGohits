@@ -20,7 +20,6 @@
                 android:id="@+id/myPict"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-
                 android:src="@drawable/wtf_2022_website_1280x680px_1"/>
 
             <LinearLayout
