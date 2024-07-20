@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.okhttp3)
     implementation(libs.logging.interceptor)
     implementation(libs.glide)
+    implementation(libs.circleimageview)
     kapt(libs.glide.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

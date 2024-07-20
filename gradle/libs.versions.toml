@@ -17,6 +17,7 @@ retrofit = "2.9.0"
 gson = "2.8.8"
 
 [libraries]
+circleimageview = {module="de.hdodenhof:circleimageview", version="2.2.0"}
 okhttp3 = {module="com.squareup.okhttp3:okhttp", version="4.9.0"}
 logging-interceptor = {module="com.squareup.okhttp3:logging-interceptor", version="4.9.0"}
 glide = { module = "com.github.bumptech.glide:glide", version = "4.12.0" }
