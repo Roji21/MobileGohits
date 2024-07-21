@@ -1,5 +1,6 @@
 package com.rozi.gohits.ui.dashboard
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -36,11 +37,13 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-//        val textView: TextView = binding.textDashboard
-//        dashboardViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
+        val userSession = getUserSession()
+        if (userSession != null) {
+            val (userId, usernama) = userSession
+            binding.textView4.text = usernama
+        } else {
+            Toast.makeText(context, "User session not found", Toast.LENGTH_SHORT).show()
+        }
         val conrecyclerView: RecyclerView = binding.Dashboard
         conrecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         fetchMenuHomeData()
@@ -75,5 +78,15 @@ class DashboardFragment : Fragment() {
                 Toast.makeText(context, "Koneksi gagal: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+    private fun getUserSession(): Pair<String, String>? {
+        val sharedPreferences = activity?.getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
+        val userId = sharedPreferences?.getString("userId", null)
+        val usernama = sharedPreferences?.getString("usernama", null)
+        return if (userId != null && usernama != null) {
+            Pair(userId, usernama)
+        } else {
+            null
+        }
     }
 }

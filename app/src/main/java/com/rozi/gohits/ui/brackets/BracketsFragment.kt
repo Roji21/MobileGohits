@@ -1,6 +1,7 @@
 package com.rozi.gohits.ui.brackets
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -27,11 +28,12 @@ class BracketsFragment : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = FragmentBracketsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE)
+        val usernama = sharedPreferences.getString("usernama", "Unknown User")
+        binding.textView4.text = usernama
 
         val id = intent.getStringExtra("id")
-        val root: View = binding.root
         val recyclerView: RecyclerView = binding.rvParticipants
-        recyclerView.layoutManager = LinearLayoutManager(this@BracketsFragment, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.layoutManager = GridLayoutManager(this@BracketsFragment, 2)
         val apiService = ApiClient.getClient(this).create(ApiService::class.java)
         val call = apiService.detail(id.toString())
