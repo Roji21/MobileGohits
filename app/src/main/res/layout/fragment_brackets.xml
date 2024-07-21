@@ -120,6 +120,7 @@
                                         <TextView
                                             android:layout_width="120dp"
                                             android:id="@+id/judu"
+                                            android:textColor="@color/black"
                                             android:textAlignment="center"
                                             android:layout_marginTop="5dp"
                                             android:layout_height="40dp"
@@ -138,6 +139,7 @@
                                                 android:id="@+id/datee"
                                                 android:layout_marginLeft="10dp"
                                                 android:layout_marginTop="5dp"
+                                                android:textColor="@color/black"
                                                 android:layout_width="wrap_content"
                                                 android:textSize="13dp"
                                                 android:layout_height="wrap_content"
@@ -146,6 +148,7 @@
                                             <TextView
                                                 android:id="@+id/date"
                                                 android:textSize="13dp"
+                                                android:textColor="@color/black"
                                                 android:layout_marginLeft="30dp"
                                                 android:layout_marginTop="5dp"
                                                 android:layout_width="wrap_content"
@@ -164,6 +167,7 @@
                                                 android:layout_marginTop="5dp"
                                                 android:layout_width="wrap_content"
                                                 android:textSize="13dp"
+                                                android:textColor="@color/black"
                                                 android:layout_height="wrap_content"
                                                 android:text="Time :">
                                             </TextView>
@@ -172,6 +176,7 @@
                                                 android:textSize="13dp"
                                                 android:layout_marginLeft="30dp"
                                                 android:layout_marginTop="5dp"
+                                                android:textColor="@color/black"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_toEndOf="@+id/timee">
@@ -186,6 +191,7 @@
                                             <TextView
                                                 android:id="@+id/organn"
                                                 android:layout_marginLeft="10dp"
+                                                android:textColor="@color/black"
                                                 android:layout_marginTop="5dp"
                                                 android:layout_width="wrap_content"
                                                 android:textSize="13dp"
@@ -197,6 +203,7 @@
                                                 android:textSize="13dp"
                                                 android:layout_marginLeft="30dp"
                                                 android:layout_marginTop="5dp"
+                                                android:textColor="@color/black"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_toEndOf="@+id/organn">
@@ -213,12 +220,14 @@
                                                 android:layout_marginTop="5dp"
                                                 android:layout_width="wrap_content"
                                                 android:textSize="13dp"
+                                                android:textColor="@color/black"
                                                 android:layout_height="wrap_content"
                                                 android:text="Location :">
                                             </TextView>
                                             <TextView
                                                 android:id="@+id/location"
                                                 android:textSize="13dp"
+                                                android:textColor="@color/black"
                                                 android:layout_marginLeft="30dp"
                                                 android:layout_marginTop="5dp"
                                                 android:layout_width="wrap_content"
@@ -235,6 +244,7 @@
                                             <TextView
                                                 android:id="@+id/partt"
                                                 android:layout_marginLeft="10dp"
+                                                android:textColor="@color/black"
                                                 android:layout_marginTop="5dp"
                                                 android:layout_width="wrap_content"
                                                 android:textSize="13dp"
@@ -243,6 +253,7 @@
                                             </TextView>
                                             <TextView
                                                 android:id="@+id/parti"
+                                                android:textColor="@color/black"
                                                 android:textSize="13dp"
                                                 android:layout_marginLeft="30dp"
                                                 android:layout_marginTop="5dp"
@@ -294,7 +305,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="8dp"
-                                        android:layout_below="@+id/ja"/>
+                                        android:layout_below="@+id/ja"
+                                        android:background="@color/white"/>
                                 </RelativeLayout>
                                 <TextView
                                     android:layout_width="wrap_content"
