@@ -1,9 +1,11 @@
 package com.rozi.gohits.ui.notifications
 
+import android.Manifest
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -15,6 +17,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.rozi.gohits.ApiService
 import com.rozi.gohits.UploadResponse
@@ -40,6 +44,8 @@ class NotificationsFragment : Fragment() {
     ): View? {
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        checkPermissions()
 
         val items = listOf("SELECT CATEGORY", "Badminton", "FootBall", "Pimpong", "Running", "Esport")
         val par = listOf("SELECT PARTICIPANT", "8")
@@ -77,7 +83,6 @@ class NotificationsFragment : Fragment() {
         val category = binding.category.selectedItem.toString().trim()
         val participant = binding.participant.selectedItem.toString().trim()
 
-        // Cek apakah ada field yang kosong
         if (title.isEmpty()) {
             Toast.makeText(context, "Title cannot be empty", Toast.LENGTH_SHORT).show()
             return
@@ -153,7 +158,8 @@ class NotificationsFragment : Fragment() {
                     }
 
                     override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-                        Toast.makeText(context, "lah: ${t.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Upload failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                        Log.d("NotificationsFragment", "Response: ${t.message}")
                     }
                 })
             }
@@ -161,7 +167,6 @@ class NotificationsFragment : Fragment() {
             Toast.makeText(context, "User session not found", Toast.LENGTH_SHORT).show()
         }
     }
-
 
     private fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()
@@ -241,8 +246,13 @@ class NotificationsFragment : Fragment() {
         }
     }
 
+    private fun checkPermissions() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), PERMISSION_REQUEST_CODE)
+        }
+    }
+
     companion object {
         private const val PERMISSION_REQUEST_CODE = 100
     }
-
 }
