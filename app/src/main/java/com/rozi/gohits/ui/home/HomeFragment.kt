@@ -92,7 +92,7 @@ class HomeFragment : Fragment(), OnMenuItemClickListener {
                     val menuHomeResponse = response.body()
                     if (menuHomeResponse != null) {
                         originalMenuContents = menuHomeResponse.data.map {
-                            MenuHomeItem(it.title, it.upload, it.price, it.organizer, it.type_sport)
+                            MenuHomeItem(it.id_event, it.title, it.upload, it.price, it.organizer, it.type_sport)
                         }
                         conAdapter = MyAdapter_content(originalMenuContents)
                         binding.conten.adapter = conAdapter

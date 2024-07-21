@@ -42,7 +42,7 @@ class MyAdapter_content(private var menuItems: List<MenuHomeItem>) : RecyclerVie
                  Toast.makeText(holder.itemView.context, "NAMA: ${menuItem.title} ", Toast.LENGTH_SHORT).show()
                  val context = holder.itemView.context
                  val intent = Intent(context, BracketsFragment::class.java)
-                 intent.putExtra("NAMA", menuItem.title)
+                 intent.putExtra("id", menuItem.id_event)
                  context.startActivity(intent)
 
             } catch (e: Exception) {

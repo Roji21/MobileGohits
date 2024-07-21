@@ -10,6 +10,7 @@ data class MenuHomeResponse(
     val data: List<MenuHomeItem>
 )
 data class MenuHomeItem(
+    val id_event: String,
     val title: String,
     val upload: String,
     val price: String,
@@ -35,14 +36,21 @@ data class UploadResponse(
 )
 data class Det(
     val status: String,
-    val data: List<MenuDet>
+    val isi : String,
+    val data: List<MenuDet>,
+    val perserta: List<Detnam>
 )
 
 data class MenuDet(
     val title: String,
+    val date_column :String,
     val upload: String,
     val organizer: String,
     val time: String,
     val participant: String,
     val location: String
+)
+data class Detnam(
+    val id_user :String,
+    val nama: String
 )
