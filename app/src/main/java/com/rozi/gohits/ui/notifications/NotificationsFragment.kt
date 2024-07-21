@@ -56,6 +56,13 @@ class NotificationsFragment : Fragment() {
         binding.time.setOnClickListener { showTimePickerDialog() }
         binding.buttonUploadImage.setOnClickListener { selectImage() }
         binding.save.setOnClickListener { uploadData() }
+        val userSession = getUserSession()
+        if (userSession != null) {
+            val (userId, usernama) = userSession
+            binding.textView4.text = usernama
+        } else {
+            Toast.makeText(context, "User session not found", Toast.LENGTH_SHORT).show()
+        }
 
         return root
     }
@@ -237,4 +244,5 @@ class NotificationsFragment : Fragment() {
     companion object {
         private const val PERMISSION_REQUEST_CODE = 100
     }
+
 }
