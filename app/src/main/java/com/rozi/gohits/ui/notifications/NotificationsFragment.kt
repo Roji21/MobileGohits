@@ -20,7 +20,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.rozi.gohits.ApiService
+import com.rozi.gohits.R
 import com.rozi.gohits.UploadResponse
 import com.rozi.gohits.databinding.FragmentNotificationsBinding
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -151,6 +153,7 @@ class NotificationsFragment : Fragment() {
                     override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>) {
                         if (response.isSuccessful) {
                             Toast.makeText(context, "Upload successful", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.action_notificationsFragment_to_homeFragment)
                         } else {
                             Toast.makeText(context, "Upload failed: ${response.message()}", Toast.LENGTH_SHORT).show()
                             Log.d("NotificationsFragment", "Response: $response")
